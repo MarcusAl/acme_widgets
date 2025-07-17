@@ -1,0 +1,3 @@
+special_offers:
+  - product_code: 'R01'
+    discount_type: 'buy_one_get_one_half_price'
