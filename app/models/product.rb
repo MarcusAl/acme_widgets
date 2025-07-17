@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id          :uuid             not null, primary key
+#  code        :string
+#  name        :string
+#  price_cents :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+# Indexes
+#
+#  index_products_on_code  (code) UNIQUE
+#
 class Product < ApplicationRecord
   PRODUCT_CODES = %w[R01 G01 B01]
 
