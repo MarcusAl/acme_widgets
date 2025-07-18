@@ -8,7 +8,6 @@
 #
 FactoryBot.define do
   factory :cart do
-
     trait :with_items do
       after(:create) do |cart|
         cart.products << create(:product)
