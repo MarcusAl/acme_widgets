@@ -27,11 +27,12 @@ This application implements a sophisticated shopping cart system with the follow
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Prerequisites/Assumptions
 
 - Ruby 3.3+ (see `.ruby-version`)
 - PostgreSQL
 - Rails 8.0.1
+- Internet access
 
 ### Installation
 
