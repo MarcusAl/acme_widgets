@@ -18,11 +18,15 @@ module SpecialOffers
   end
 
   def special_offers_discount
-    apply_special_offers
+    @special_offers_discount ||= apply_special_offers
   end
 
   def special_offers_discount_formatted
-    Money.new(apply_special_offers, "USD").format
+    Money.new(special_offers_discount, "USD").format
+  end
+
+  def clear_special_offers_cache
+    @special_offers_discount = nil
   end
 
   private

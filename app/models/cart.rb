@@ -12,6 +12,8 @@ class Cart < ApplicationRecord
 
   CartError = Class.new(StandardError)
 
+  after_commit :clear_special_offers_cache, only: [ :add_item, :remove_item, :update_quantity, :clear ]
+
   has_many :cart_items, dependent: :destroy
   has_many :products, through: :cart_items
 
