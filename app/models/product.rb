@@ -21,4 +21,8 @@ class Product < ApplicationRecord
   validates :code, presence: true, inclusion: { in: PRODUCT_CODES }, uniqueness: true
 
   monetize :price_cents, as: :price
+
+  def price_formatted
+    Money.new(price_cents, "USD").format
+  end
 end

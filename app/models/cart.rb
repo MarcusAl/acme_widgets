@@ -57,6 +57,8 @@ class Cart < ApplicationRecord
   end
 
   def total
+    return 0 if subtotal.zero?
+
     subtotal - special_offers_discount + delivery_charge
   end
 
