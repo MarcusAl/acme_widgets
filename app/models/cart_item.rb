@@ -3,7 +3,7 @@
 # Table name: cart_items
 #
 #  id         :uuid             not null, primary key
-#  quantity   :integer          default(1), not null
+#  quantity   :integer          default(0), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  cart_id    :uuid             not null
@@ -24,7 +24,7 @@ class CartItem < ApplicationRecord
   belongs_to :cart
   belongs_to :product
 
-  validates :quantity, presence: true, numericality: { greater_than: 0 }
+  validates :quantity, presence: true
   validates :product_id, uniqueness: { scope: :cart_id }
 
   def total_price_cents
